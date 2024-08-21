@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "SignalR Client";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>@ViewBag.SignalRStatus</p>
+
+@if (ViewBag.ReceivedMessage != null)
+{
+    <p>Message from SignalR Hub: @ViewBag.ReceivedMessage</p>
+}
+
+@using (Html.BeginForm("SendMessage", "Home", FormMethod.Post))
+{
+    <input type="text" name="message" placeholder="Enter message" />
+    <button type="submit">Send Message</button>
+}
